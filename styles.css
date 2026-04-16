@@ -3,20 +3,21 @@
 /* Regular */
 @font-face {
     font-family: 'General Sans';
-    src: url(/Users/ramzelliwanag/Desktop/Career/Website_Ramzel/fonts/GeneralSans-Regular.woff2) format('woff2');
-    font-weight: 400;
+    src: url(/fonts/GeneralSans-Regular.woff2) format('woff2');
+    font-weight: 50;
     font-style: normal;
     font-display: swap;
 }
 
-/* Semibold */
+/* Medium */
 @font-face {
     font-family: 'General Sans';
-    src: url(/Users/ramzelliwanag/Desktop/Career/Website_Ramzel/fonts/GeneralSans-Medium.woff2) format('woff2');
+    src: url(/fonts/GeneralSans-Medium.woff2) format('woff2');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
+
 
 /* ===== GLOBAL STYLES ===== */
 
@@ -24,7 +25,7 @@ body {
   font-family: 'General Sans', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #0a0a0a;
+  background-color: #000000;
   color: #ffffff;
 }
 
@@ -41,15 +42,87 @@ body {
 
 /* Name */
 .hero h1 {
-  font-size: 64px;
+  font-size: 160px;
   font-weight: 600;
   margin: 0;
+}
+
+/* Credentials */
+.hero h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 12px;
+  color: #a8a8a8;
+}
+
+/* Qualities */
+.hero h3 {
+  font-size: 55px;
+  font-weight: 600;
+  margin: 12px;
+  color: #a8a8a8;
 }
 
 /* Subtitle */
 .hero p {
   font-size: 18px;
   font-weight: 400;
-  margin-top: 12px;
-  opacity: 0.7;
+  margin: 15px;
+  color: #d6d6d6;
+}
+
+/* Text Cycle */
+
+.text-cycle {
+  position: relative;
+  display: inline-block;
+  min-width: 12ch;
+  height: 2em;          /* taller box */
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.text-cycle span {
+  position: absolute;
+  left: 0;
+  top: 0.7em;           /* pushes resting text lower in the box */
+  opacity: 0;
+  filter: blur(3px);
+  transform: translateY(8px);
+  white-space: nowrap;
+  animation: cycle 6.1s infinite;
+}
+
+/* 4 words, staggered every 2s */
+.text-cycle span:nth-child(1) { animation-delay: 0s; }
+.text-cycle span:nth-child(2) { animation-delay: 1.5s; }
+.text-cycle span:nth-child(3) { animation-delay: 3s; }
+.text-cycle span:nth-child(4) { animation-delay: 4.5s; }
+
+@keyframes cycle {
+  0% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(8px);
+  }
+  8% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+  22% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+  32% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(-0.8em);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(-0.8em);
+  }
 }
