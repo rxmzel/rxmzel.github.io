@@ -3,7 +3,7 @@
 /* Regular */
 @font-face {
     font-family: 'General Sans';
-    src: url(/fonts/GeneralSans-Regular.woff2) format('woff2');
+    src: url('fonts/GeneralSans-Regular.woff2') format('woff2');
     font-weight: 50;
     font-style: normal;
     font-display: swap;
@@ -12,7 +12,7 @@
 /* Medium */
 @font-face {
     font-family: 'General Sans';
-    src: url(/fonts/GeneralSans-Medium.woff2) format('woff2');
+    src: url('fonts/GeneralSans-Medium.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
