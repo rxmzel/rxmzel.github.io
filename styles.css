@@ -1,0 +1,55 @@
+/* ===== FONT SETUP ===== */
+
+/* Regular */
+@font-face {
+    font-family: 'General Sans';
+    src: url(/Users/ramzelliwanag/Desktop/Career/Website_Ramzel/fonts/GeneralSans-Regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Semibold */
+@font-face {
+    font-family: 'General Sans';
+    src: url(/Users/ramzelliwanag/Desktop/Career/Website_Ramzel/fonts/GeneralSans-Semibold.woff2) format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ===== GLOBAL STYLES ===== */
+
+body {
+  font-family: 'General Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+
+/* ===== HERO SECTION ===== */
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 5%;
+}
+
+/* Name */
+.hero h1 {
+  font-size: 64px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Subtitle */
+.hero p {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 12px;
+  opacity: 0.7;
+}
