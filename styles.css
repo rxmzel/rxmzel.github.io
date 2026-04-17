@@ -80,6 +80,7 @@ body {
   color: #ffffff;
 }
 
+
 /* ===== FOOTER ===== */
 
 .footer {
@@ -132,7 +133,7 @@ body {
 }
 
 .hero h1 {
-  font-size: clamp(93px, 16vw, 160px);
+  font-size: clamp(120px, 16vw, 160px);
   font-weight: 600;
   margin: 0;
   line-height: 0.9;
@@ -140,14 +141,14 @@ body {
 }
 
 .hero h2 {
-  font-size: clamp(14px, 2.4vw, 24px);
+  font-size: clamp(18px, 2.4vw, 24px);
   font-weight: 600;
   margin: 0;
   color: #a8a8a8;
 }
 
 .hero h3 {
-  font-size: clamp(28px, 5.5vw, 55px);
+  font-size: clamp(42px, 5.5vw, 55px);
   font-weight: 600;
   margin: 0;
   color: #ffffff;
@@ -155,7 +156,7 @@ body {
 }
 
 .hero p {
-  font-size: clamp(11px, 2.1vw, 21px);
+  font-size: clamp(16px, 2.1vw, 21px);
   font-weight: 400;
   margin: 0px 0 0 0;
   color: #d6d6d6;
