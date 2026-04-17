@@ -155,7 +155,7 @@ html {
   white-space: nowrap;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 415px) {
   .hero h2 {
     font-size: calc(var(--hero-title) * 0.15);
   }
