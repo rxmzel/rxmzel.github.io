@@ -133,7 +133,7 @@ body {
 }
 
 .hero h1 {
-  font-size: clamp(118px, 16vw, 160px);
+  font-size: clamp(115px, 16vw, 160px);
   font-weight: 600;
   margin: 0;
   line-height: 0.9;
@@ -141,14 +141,14 @@ body {
 }
 
 .hero h2 {
-  font-size: clamp(17.75px, 2.4vw, 24px);
+  font-size: clamp(17.25px, 2.4vw, 24px);
   font-weight: 600;
   margin: 0;
   color: #a8a8a8;
 }
 
 .hero h3 {
-  font-size: clamp(40px, 5.5vw, 55px);
+  font-size: clamp(39px, 5.5vw, 55px);
   font-weight: 600;
   margin: 0;
   color: #ffffff;
