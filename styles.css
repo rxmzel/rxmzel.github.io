@@ -124,7 +124,7 @@ body {
 /* ===== HERO SECTION ===== */
 
 .hero {
-  --hero-title: clamp(115px, 16vw, 140px);
+  --hero-title: clamp(100px, 16vw, 135px);
 
   height: 100vh;
   display: flex;
