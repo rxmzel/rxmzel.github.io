@@ -151,7 +151,7 @@ body {
 
 @media (max-width: 450px) {
   .hero h2 {
-    font-size: calc(var(--hero-title) * 0.11);
+    font-size: calc(var(--hero-title) * 0.1);
   }
 }
 
