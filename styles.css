@@ -124,7 +124,7 @@ body {
 /* ===== HERO SECTION ===== */
 
 .hero {
-  --hero-title: clamp(90px, 16vw, 120px);
+  --hero-title: clamp(115px, 16vw, 140px);
 
   height: 100vh;
   display: flex;
@@ -143,10 +143,12 @@ body {
 }
 
 .hero h2 {
-  font-size: calc(var(--hero-title) * 0.15);
+  font-size: clamp(13px, 1.55vw, 21px);
   font-weight: 600;
   margin: 0;
   color: #a8a8a8;
+  white-space: nowrap;
+  letter-spacing: -0.02em;
 }
 
 .hero h3 {
@@ -160,10 +162,24 @@ body {
 .hero p {
   font-size: clamp(15px, 2.1vw, 21px);
   font-weight: 400;
-  margin: 0px 0 0 0;
+  margin: 0;
   color: #d6d6d6;
 }
 
+/* Narrow desktop / tablet zone */
+@media (max-width: 900px) {
+  .hero h2 {
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 12px;
+    letter-spacing: -0.025em;
+  }
+}
 
 
 
