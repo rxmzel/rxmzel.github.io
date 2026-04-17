@@ -142,16 +142,22 @@ body {
   transform: translateX(-0.06em);
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 .hero h2 {
   font-size: calc(var(--hero-title) * 0.15);
   font-weight: 600;
   margin: 0;
   color: #a8a8a8;
+  white-space: nowrap;
 }
 
 @media (max-width: 450px) {
   .hero h2 {
-    font-size: calc(var(--hero-title) * 0.3);
+    font-size: calc(var(--hero-title) * 0.2);
   }
 }
 
