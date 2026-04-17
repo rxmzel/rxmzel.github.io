@@ -124,7 +124,7 @@ body {
 /* ===== HERO SECTION ===== */
 
 .hero {
-  --hero-title: clamp(72px, 12vw, 140px);
+  --hero-title: clamp(80px, 12vw, 140px);
 
   height: 100vh;
   display: flex;
@@ -149,7 +149,7 @@ body {
   color: #a8a8a8;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .hero h2 {
     font-size: calc(var(--hero-title) * 0.19);
   }
