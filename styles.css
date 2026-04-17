@@ -141,7 +141,7 @@ body {
 }
 
 .hero h2 {
-  font-size: clamp(15px, 2.4vw, 24px);
+  font-size: clamp(17.25px, 2.4vw, 21px);
   font-weight: 600;
   margin: 0;
   color: #a8a8a8;
