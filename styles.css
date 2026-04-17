@@ -44,14 +44,14 @@ body {
 .hero h1 {
   font-size: 160px;
   font-weight: 600;
-  margin: 0;
+  margin: 0px 0px -18px -10px;
 }
 
 /* Credentials */
 .hero h2 {
   font-size: 24px;
   font-weight: 600;
-  margin: 12px;
+  margin: 0px 0 0 0;
   color: #a8a8a8;
 }
 
@@ -59,15 +59,15 @@ body {
 .hero h3 {
   font-size: 55px;
   font-weight: 600;
-  margin: 12px;
+  margin: 0px 0 0 0;
   color: #ffffff;
 }
 
 /* Subtitle */
 .hero p {
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 400;
-  margin: 15px;
+  margin: 6px 0 0 4px;
   color: #d6d6d6;
 }
 
