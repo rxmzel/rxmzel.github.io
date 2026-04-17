@@ -149,7 +149,7 @@ body {
   color: #a8a8a8;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 400px) {
   .hero h2 {
     font-size: calc(var(--hero-title) * 0.19);
   }
