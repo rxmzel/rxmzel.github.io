@@ -89,13 +89,15 @@ body {
   align-items: flex-end;
   padding: 80px 5%;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #1f1f1f;
   gap: 40px;
 }
 
 .footer-left h4 {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 400;
   margin: 0;
+  white-space: nowrap;
 }
 
 .footer-left p {
@@ -104,9 +106,19 @@ body {
   margin-top: 8px;
 }
 
+@media (max-width: 900px) {
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+}
+
 .footer-right {
   display: flex;
-  gap: 32px;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 18px;
 }
 
 .footer-right a {
@@ -114,6 +126,7 @@ body {
   color: #d6d6d6;
   text-decoration: none;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 .footer-right a:hover {
