@@ -15,11 +15,7 @@
   align-items: flex-start;
 }
 
-.footer-top {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
+/* ===== ACKNOWLEDGEMENT OF COUNTRY ===== */
 
 .footer-ack {
   margin-top: 16px;
@@ -32,6 +28,20 @@
   line-height: 1.5;
   margin: 0;
   text-align: justify;
+}
+
+@media (max-width: 950px) {
+  .footer-ack {
+    max-width: 340px;
+  }
+}
+
+/* ===== TOP ROW ===== */
+
+.footer-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .footer-flag {
@@ -54,13 +64,7 @@
   margin: 6px 0 0 0;
 }
 
-@media (max-width: 950px) {
-  .footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 50px;
-  }
-}
+/* ===== CONTACT ICONS/LINKS ===== */
 
 .footer-right {
   display: flex;
@@ -81,6 +85,14 @@
   height: 45px;
   opacity: 0.75;
   transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+@media (max-width: 950px) {
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+  }
 }
 
 @media (max-width: 400px) {
