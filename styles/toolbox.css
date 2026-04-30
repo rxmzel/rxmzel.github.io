@@ -1,0 +1,26 @@
+.toolbox {
+  --toolbox-title: clamp(100px, 12vw, 160px);
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 5%;
+}
+
+.toolbox h1 {
+  font-size: calc(var(--toolbox-title) * 0.35);
+  font-weight: 600;
+  margin: 0;
+  color: #ffffff;
+  line-height: 1.05;
+}
+
+.toolbox p {
+  font-size: calc(var(--toolbox-title) * 0.13);
+  font-weight: 400;
+  margin: 0;
+  line-height: 0;
+  color: #d6d6d6;
+}
