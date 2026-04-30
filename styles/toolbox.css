@@ -1,26 +1,117 @@
+/* ===== TOOLBOX SECTION ===== */
+
 .toolbox {
   --toolbox-title: clamp(100px, 12vw, 160px);
 
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
   padding: 0 5%;
 }
 
 .toolbox h1 {
   font-size: calc(var(--toolbox-title) * 0.35);
   font-weight: 600;
-  margin: 0;
+  margin: 0 0 48px 0;
   color: #ffffff;
   line-height: 1.05;
 }
 
-.toolbox p {
-  font-size: calc(var(--toolbox-title) * 0.13);
+.toolbox-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.toolbox-column {
+  min-height: 260px;
+  padding: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #1f1f1f;
+  border-radius: 7.5px;
+}
+
+.toolbox-column h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 28px 0;
+  color: #a8a8a8;
+}
+
+.toolbox-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.toolbox-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toolbox-item img {
+  width: auto;
+  height: 50px;
+  opacity: 1;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.toolbox-item:hover img {
+  opacity: 1;
+  filter: invert(1);
+}
+
+/* Tooltip */
+.toolbox-item::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  transform: translateX(-50%) translateY(4px);
+  background: #ffffff;
+  color: #000000;
+  font-size: 12px;
   font-weight: 400;
-  margin: 0;
-  line-height: 0;
-  color: #d6d6d6;
+  padding: 6px 9px;
+  border-radius: 2.5px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.toolbox-item:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Tablet / narrow desktop */
+@media (max-width: 1000px) {
+  .toolbox-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .toolbox {
+    padding: 100px 5%;
+  }
+}
+
+/* Phone */
+@media (max-width: 768px) {
+  .toolbox h1 {
+    margin-bottom: 32px;
+  }
+
+  .toolbox-column {
+    padding: 24px;
+  }
+
+  .toolbox-item img {
+    height: 34px;
+  }
 }
