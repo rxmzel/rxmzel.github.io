@@ -1,0 +1,108 @@
+/* ===== HERO SECTION ===== */
+
+.hero {
+  --hero-title: clamp(100px, 12vw, 160px);
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 5%;
+}
+
+.hero h1 {
+  font-size: var(--hero-title);
+  font-weight: 600;
+  margin: 0;
+  line-height: 0.9;
+  transform: translateX(-0.06em);
+}
+
+.hero h2 {
+  font-size: calc(var(--hero-title) * 0.15);
+  font-weight: 600;
+  margin: 0;
+  color: #a8a8a8;
+  white-space: nowrap;
+}
+
+@media (max-width: 415px) {
+  .hero h2 {
+    font-size: calc(var(--hero-title) * 0.15);
+  }
+}
+
+.hero h3 {
+  font-size: calc(var(--hero-title) * 0.35);
+  font-weight: 600;
+  margin: 0;
+  color: #ffffff;
+  line-height: 1.05;
+}
+
+.hero p {
+  font-size: calc(var(--hero-title) * 0.13);
+  font-weight: 400;
+  margin: 0;
+  line-height: 0;
+  color: #d6d6d6;
+}
+
+
+/* Text Cycle */
+
+.text-cycle {
+  position: relative;
+  display: inline-block;
+  min-width: 12ch;
+  height: 2em;          /* taller box */
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.text-cycle span {
+  position: absolute;
+  left: 0;
+  top: 0.7em;           /* pushes resting text lower in the box */
+  opacity: 0;
+  filter: blur(3px);
+  transform: translateY(8px);
+  white-space: nowrap;
+  animation: cycle 6.1s infinite;
+}
+
+/* 4 words, staggered every 2s */
+.text-cycle span:nth-child(1) { animation-delay: 0s; }
+.text-cycle span:nth-child(2) { animation-delay: 1.5s; }
+.text-cycle span:nth-child(3) { animation-delay: 3s; }
+.text-cycle span:nth-child(4) { animation-delay: 4.5s; }
+
+
+@keyframes cycle {
+  0% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(8px);
+  }
+  8% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+  22% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+  32% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(-0.8em);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(-0.8em);
+  }
+}
