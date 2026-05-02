@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 5%;
+  padding: 5% 5%;
 }
 
 .toolbox h1 {
@@ -21,8 +21,9 @@
 .toolbox-grid {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 24px;
+  row-gap: 48px;
 }
 
 .toolbox-column {
@@ -42,20 +43,24 @@
 
 .toolbox-icons {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 18px;
 }
 
 .toolbox-item {
+  --icon-size: 50px;
+
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: fit-content;
 }
 
 .toolbox-item img {
   width: auto;
-  height: 50px;
+  height: var(--icon-size);
   opacity: 1;
   transition: opacity 0.3s ease, filter 0.3s ease;
 }
@@ -65,19 +70,25 @@
   filter: invert(1);
 }
 
-/* Tooltip */
+/* Desktop tooltip: below icon */
 .toolbox-item::after {
   content: attr(data-tooltip);
   position: absolute;
   left: 50%;
-  bottom: calc(100% + 10px);
-  transform: translateX(-50%) translateY(4px);
+  top: calc(100% + 12px);
+  transform: translateX(-50%) translateY(-4px);
+
+  height: var(--icon-size);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+
   background: #ffffff;
   color: #000000;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 400;
-  padding: 6px 9px;
-  border-radius: 2.5px;
+  padding: 0 14px;
+  border-radius: 5px;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
@@ -99,19 +110,27 @@
   .toolbox {
     padding: 100px 5%;
   }
+
+  .toolbox-icons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Narrow view tooltip: right of icon */
+  .toolbox-item::after {
+    left: calc(100% + 14px);
+    top: 50%;
+    transform: translateY(-50%) translateX(-4px);
+  }
+
+  .toolbox-item:hover::after {
+    transform: translateY(-50%) translateX(0);
+  }
 }
 
 /* Phone */
 @media (max-width: 768px) {
-  .toolbox h1 {
-    margin-bottom: 32px;
-  }
-
-  .toolbox-column {
-    padding: 24px;
-  }
-
-  .toolbox-item img {
-    height: 34px;
+  .toolbox-item {
+    --icon-size: 50px;
   }
 }
