@@ -22,7 +22,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  column-gap: 24px;
+  column-gap: 18px;
   row-gap: 48px;
 }
 
@@ -49,7 +49,7 @@
 }
 
 .toolbox-item {
-  --icon-size: 50px;
+  --icon-size: 60px;
 
   position: relative;
   display: inline-flex;
@@ -82,6 +82,7 @@
   box-sizing: border-box;
   display: flex;
   align-items: center;
+  justify-content: center; /* add this */
 
   background: #ffffff;
   color: #000000;
@@ -100,8 +101,20 @@
   transform: translateX(-50%) translateY(0);
 }
 
+@media (min-width: 800px) {
+  .toolbox-item::after {
+    height: auto;
+    font-size: 12.5px;
+    padding: 10px 8px;
+    line-height: 1;
+
+    min-width: var(--icon-size);   /* key line */
+    text-align: center;            /* keeps text centered when wider */
+  }
+}
+
 /* Tablet / narrow desktop */
-@media (max-width: 1000px) {
+@media (max-width: 650px) {
   .toolbox-grid {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -129,8 +142,40 @@
 }
 
 /* Phone */
-@media (max-width: 768px) {
+@media (max-width: 415px) {
+
+  .toolbox-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .toolbox {
+    padding: 100px 5%;
+  }
+
+  /* Icons horizontal again */
+  .toolbox-icons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* 3 icons per row */
   .toolbox-item {
-    --icon-size: 50px;
+    --icon-size: 60px;
+    width: calc((100% - 32px) / 3); /* 3 across with gap */
+    justify-content: center;
+    margin-bottom: 24px; /* space for tooltip */
+  }
+
+  /* Tooltip stays BELOW like desktop */
+  .toolbox-item::after {
+    left: 50%;
+    top: calc(100% + 8px);
+    transform: translateX(-50%) translateY(-4px);
+  }
+
+  .toolbox-item:hover::after {
+    transform: translateX(-50%) translateY(0);
   }
 }
