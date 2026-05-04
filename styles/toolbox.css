@@ -32,6 +32,8 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: #1f1f1f;
   border-radius: 7.5px;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .toolbox-column h2 { /* ===== COLUMN TITLE FONT ===== */
@@ -40,6 +42,8 @@
   margin: 0 0 28px 0;
   color: #a8a8a8;
   white-space: nowrap;
+
+  padding-left: calc(((100% / var(--icons-across)) - var(--icon-size)) / 2);
 }
 
 .toolbox-icons { /* ===== TOOLBOX ICON SPACING ===== */
