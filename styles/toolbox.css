@@ -1,4 +1,4 @@
-/* ===== TOOLBOX SECTION ===== */
+/* ===== TOOLBOX SECTION: FULL DESKTOP ===== */
 
 .toolbox {
   --toolbox-title: clamp(100px, 12vw, 160px);
@@ -10,23 +10,23 @@
   padding: 5% 5%;
 }
 
-.toolbox h1 {
-  font-size: calc(var(--toolbox-title) * 0.35);
+.toolbox h1 { /* ===== FONT SIZE ===== */
+  font-size: calc(var(--toolbox-title) * 0.25);
   font-weight: 600;
   margin: 0 0 48px 0;
   color: #ffffff;
   line-height: 1.05;
 }
 
-.toolbox-grid {
+.toolbox-grid { /* ===== COLUMN GRIDS SETUP ===== */
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
   column-gap: 18px;
   row-gap: 48px;
 }
 
-.toolbox-column {
+.toolbox-column { /* ===== COLUMN BOX BACKGROUND ===== */
   min-height: 260px;
   padding: 32px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -34,148 +34,148 @@
   border-radius: 7.5px;
 }
 
-.toolbox-column h2 {
+.toolbox-column h2 { /* ===== COLUMN TITLE FONT ===== */
   font-size: 24px;
   font-weight: 600;
   margin: 0 0 28px 0;
   color: #a8a8a8;
+  white-space: nowrap;
 }
 
-.toolbox-icons {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 18px;
+.toolbox-icons { /* ===== TOOLBOX ICON SPACING ===== */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  column-gap: 0px;
+  row-gap: 18px;
 }
 
-.toolbox-item {
-  --icon-size: 60px;
+.toolbox-item { /* ===== TOOLBOX ICON SIZE ===== */
+  --icon-size: 55px;
 
   position: relative;
-  display: inline-flex;
+  z-index: 1;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: fit-content;
+  min-width: 0;
+
+  will-change: transform;
 }
 
-.toolbox-item img {
+.toolbox-item img { /* ===== TOOLBOX ITEM IMAGE ===== */
   width: auto;
   height: var(--icon-size);
   opacity: 1;
-  transition: opacity 0.3s ease, filter 0.3s ease;
+  transition: height 0.35s ease, opacity 0.3s ease, filter 0.3s ease;
 }
 
-.toolbox-item:hover img {
-  opacity: 1;
-  filter: invert(1);
-}
-
-/* Desktop tooltip: below icon */
-.toolbox-item::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  left: 50%;
-  top: calc(100% + 12px);
-  transform: translateX(-50%) translateY(-4px);
-
-  height: var(--icon-size);
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center; /* add this */
-
-  background: #ffffff;
-  color: #000000;
-  font-size: 15px;
-  font-weight: 400;
-  padding: 0 14px;
-  border-radius: 5px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.toolbox-item:hover::after {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
-
-@media (min-width: 800px) {
-  .toolbox-item::after {
-    height: auto;
-    font-size: 12.5px;
-    padding: 10px 8px;
-    line-height: 1;
-
-    min-width: var(--icon-size);   /* key line */
-    text-align: center;            /* keeps text centered when wider */
-  }
-}
-
-/* Tablet / narrow desktop */
-@media (max-width: 650px) {
-  .toolbox-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
+/* ===== TOOLBOX SECTION: FROM 50px UP ===== */
+@media (min-width: 50px) {
   .toolbox {
     padding: 100px 5%;
   }
-
-  .toolbox-icons {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  /* Narrow view tooltip: right of icon */
-  .toolbox-item::after {
-    left: calc(100% + 14px);
-    top: 50%;
-    transform: translateY(-50%) translateX(-4px);
-  }
-
-  .toolbox-item:hover::after {
-    transform: translateY(-50%) translateX(0);
-  }
-}
-
-/* Phone */
-@media (max-width: 415px) {
 
   .toolbox-grid {
     grid-template-columns: 1fr;
     gap: 24px;
   }
 
-  .toolbox {
-    padding: 100px 5%;
-  }
-
-  /* Icons horizontal again */
   .toolbox-icons {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 16px;
+    row-gap: 42px;
   }
 
-  /* 3 icons per row */
   .toolbox-item {
-    --icon-size: 60px;
-    width: calc((100% - 32px) / 3); /* 3 across with gap */
+    --icon-size: clamp(50px, 8vw, 60px);
     justify-content: center;
-    margin-bottom: 24px; /* space for tooltip */
+    margin-bottom: 0;
+  }
+}
+
+
+/* ===== TOOLBOX SECTION: FROM 475px ===== */
+@media (min-width: 475px) {
+  .toolbox-icons {
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  /* Tooltip stays BELOW like desktop */
-  .toolbox-item::after {
-    left: 50%;
-    top: calc(100% + 8px);
-    transform: translateX(-50%) translateY(-4px);
+  .toolbox-item {
+    --icon-size: clamp(50px, 8vw, 60px);
+  }
+}
+
+/* ===== TOOLBOX SECTION: FROM 750px ===== */
+@media (min-width: 600px) {
+
+.toolbox-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+  .toolbox-column:nth-child(3) {
+    grid-column: 1 / -1;
   }
 
-  .toolbox-item:hover::after {
-    transform: translateX(-50%) translateY(0);
+  .toolbox-column:nth-child(1) .toolbox-icons,
+  .toolbox-column:nth-child(2) .toolbox-icons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .toolbox-column:nth-child(3) .toolbox-icons {
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .toolbox-item {
+    --icon-size: clamp(50px, 8vw, 60px);
+  }
+}
+
+/* ===== TOOLBOX SECTION: FROM 915px ===== */
+@media (min-width: 915px) {
+
+  .toolbox-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .toolbox-column:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  .toolbox-column:nth-child(1) .toolbox-icons,
+  .toolbox-column:nth-child(2) .toolbox-icons {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .toolbox-column:nth-child(3) .toolbox-icons {
+    grid-template-columns: repeat(9, 1fr);
+  }
+
+  .toolbox-item {
+    --icon-size: clamp(50px, 8vw, 60px);
+  }
+}
+
+/* ===== TOOLBOX SECTION: FROM 1100px ===== */
+@media (min-width: 1100px) {
+
+  .toolbox-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .toolbox-column:nth-child(3) {
+    grid-column: auto;
+  }
+
+  .toolbox-column:nth-child(1) .toolbox-icons,
+  .toolbox-column:nth-child(2) .toolbox-icons,
+  .toolbox-column:nth-child(3) .toolbox-icons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .toolbox-item {
+    --icon-size: clamp(50px, 8vw, 60px);
   }
 }
