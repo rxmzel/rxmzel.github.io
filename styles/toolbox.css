@@ -60,7 +60,10 @@
   align-items: center;
   justify-content: center;
   min-width: 0;
+}
 
+.toolbox-column,
+.toolbox-item {
   will-change: transform;
 }
 

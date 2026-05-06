@@ -42,9 +42,9 @@
 
 .about-column:first-child {
   display: flex;
-  flex-direction: column; /* 👈 key */
+  flex-direction: column;
   align-items: flex-start;
-  gap: 3px; /* spacing between image, name, credentials */
+  gap: 3px;
   order: 2;
 }
 
@@ -98,6 +98,10 @@
   height: auto;
   border-radius: 10px;
   object-fit: cover;
+}
+
+.about-column:first-child img {
+  transform-origin: top left;
 }
 
 
