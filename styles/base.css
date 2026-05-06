@@ -27,6 +27,9 @@ body {
   padding: 0;
   background-color: #1b1b1b;
   color: #ffffff;
+
+  min-width: 320px;     /* add this */
+  overflow-x: hidden;   /* prevents horizontal scroll */
 }
 
 ::selection {
@@ -44,4 +47,18 @@ body {
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+
+  min-width: 320px;     /* add this */
+}
+
+
+/* ===== GLOBAL WIDTH CONSTRAINT ===== */
+
+main > section,
+footer {
+  width: 100%;
+  max-width: 2500px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }

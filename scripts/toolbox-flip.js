@@ -1,6 +1,6 @@
-const toolboxItems = Array.from(document.querySelectorAll(".toolbox-item"));
+const toolboxItems = Array.from(document.querySelectorAll(".toolbox-column, .toolbox-item"));
 
-const breakpoints = [50, 475, 600, 915, 1100];
+const breakpoints = [50, 475, 650, 915, 1100];
 
 let previousRects = new Map();
 let currentBand = getBreakpointBand();
@@ -10,7 +10,7 @@ function getBreakpointBand() {
 
   if (width >= 1100) return "desktop-3col";
   if (width >= 915) return "tablet-2col-wide-icons";
-  if (width >= 600) return "tablet-2col";
+  if (width >= 650) return "tablet-2col";
   if (width >= 475) return "mobile-4icons";
   return "mobile-3icons";
 }
