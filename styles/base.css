@@ -18,6 +18,15 @@
     font-display: swap;
 }
 
+/* Rama Gothic Bold */
+@font-face {
+    font-family: 'Rama Gothic';
+    src: url('../fonts/RamaGothicM-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 
 /* ===== GLOBAL STYLES ===== */
 
