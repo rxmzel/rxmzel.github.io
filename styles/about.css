@@ -108,13 +108,15 @@
   transition:
     opacity 700ms ease,
     transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
-    filter 900ms ease;
+    filter 900ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Once About is reached */
-.about.is-visible .about-column:first-child img {
+.about.has-revealed .about-column:first-child img {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+
+.about.is-visible .about-column:first-child img {
   filter: saturate(1);
 }
 

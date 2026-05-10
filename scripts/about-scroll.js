@@ -1,16 +1,30 @@
 const aboutSection = document.querySelector(".about");
 
-const aboutObserver = new IntersectionObserver(
-  (entries, observer) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
+let hasRevealedAbout = false;
+let saturationTimer = null;
 
-      aboutSection.classList.add("is-visible");
-      observer.unobserve(aboutSection);
+const aboutObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!aboutSection) return;
+
+      if (entry.isIntersecting) {
+        if (!hasRevealedAbout) {
+          aboutSection.classList.add("has-revealed");
+          hasRevealedAbout = true;
+        }
+
+        saturationTimer = setTimeout(() => {
+          aboutSection.classList.add("is-visible");
+        }, 200);
+      } else {
+        clearTimeout(saturationTimer);
+        aboutSection.classList.remove("is-visible");
+      }
     });
   },
   {
-    threshold: 0.35
+    threshold: 0.45
   }
 );
 
