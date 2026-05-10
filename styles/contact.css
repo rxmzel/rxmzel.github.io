@@ -122,34 +122,49 @@
   top: 25px;
   right: 25px;
 
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
 
   background: none;
   border: none;
-  color: #ffffff;
   cursor: pointer;
   padding: 0;
+
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.contact-close::before {
-  content: "×";
-  display: block;
-  font-size: 42px;
-  line-height: 28px;
+.contact-close::before,
+.contact-close::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
 
+  width: 28px;
+  height: 2px;
+
+  background: #ffffff;
+  border-radius: 2px;
+
+  transform-origin: center;
   transition:
-    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
     opacity 0.25s ease;
 }
 
-.contact-close:hover::before {
-  content: "−";
-  transform: translateY(0px);
-  opacity: 0.8;
+.contact-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.contact-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .contact-close:hover {
-  transform: rotate(0deg) scale(1.08);
-  opacity: 0.8;
+  transform: scale(1.08);
+}
+
+.contact-close:hover::before,
+.contact-close:hover::after {
+  transform: translate(-50%, -50%) rotate(0deg);
 }
